@@ -15,7 +15,7 @@ public class RegistroActivity extends AppCompatActivity {
     public boolean isHide = false;
 
     private ImageView imgView;
-
+ //hola
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
