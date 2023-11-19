@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapaActivity">
+
+    <com.mapbox.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mapView"
+
+        />
+
+
+    <com.google.android.material.search.SearchBar
+        android:layout_width="320dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/search_bar"
+
+
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/baseline_my_location_24"
+        android:id="@+id/focusLocation"
+
+        />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="-6dp"
+        android:layout_below="@+id/search_bar"
+        android:src="@drawable/baseline_light_mode_24"
+        android:onClick="cambiarModo"
+        android:background="#E1FFDCF7"
+
+        app:contentPadding="15dp"
+        app:shapeAppearanceOverlay="@style/roundCorners"
+        android:elevation="20dp"
+        android:id="@+id/screenMode"
+
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/screenMode"
+        android:src="@drawable/traffico"
+        android:onClick="modoTraficoDia"
+        android:background="#E1FFDCF7"
+
+        app:contentPadding="15dp"
+        app:shapeAppearanceOverlay="@style/roundCorners"
+        android:elevation="20dp"
+        android:id="@+id/streetNight"
+
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/streetNight"
+        android:src="@drawable/traffico"
+        android:onClick="modoTraficoNoche"
+        android:background="#E17A95DA"
+
+        app:contentPadding="15dp"
+        app:shapeAppearanceOverlay="@style/roundCorners"
+        android:elevation="20dp"
+        android:id="@+id/streetDay"
+
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/streetDay"
+        android:src="@drawable/satellite"
+        android:onClick="modoSatellite"
+        android:background="#E1B18C64"
+
+        app:contentPadding="15dp"
+        app:shapeAppearanceOverlay="@style/roundCorners"
+        android:elevation="20dp"
+        android:id="@+id/streetSatellite"
+
+        />
+
+
+
+
+
+
+</RelativeLayout>

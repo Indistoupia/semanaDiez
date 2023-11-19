@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Semana 10</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiaW5kaXN0b3VwaWEiLCJhIjoiY2xvNjR2cWZ0MGdsMzJrcW5sZnA5ZXJwNyJ9.1pG0C0HjFJ_kNVBMjXGVQg</string>
+    <string name="title_activity_sensor">SensorActivity</string>
+</resources>
