@@ -66,14 +66,14 @@
 
             >
             <TextView
-                android:id="@+id/txtApellido"
+                android:id="@+id/txtPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Apellido" />
+                android:text="Contraseña" />
 
             <EditText
-                android:id="@+id/etApellido"
+                android:id="@+id/etPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
