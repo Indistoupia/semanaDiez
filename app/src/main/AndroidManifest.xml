@@ -27,6 +27,8 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -36,16 +38,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name=".MapaActivity"
             android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity
             android:name=".SensorActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".Editar"
+            android:exported="true" />
+
     </application>
 
 </manifest>

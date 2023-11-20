@@ -68,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    protected void onDestroy() {
+
+        super.onDestroy();
+
+
+        Intent serviceIntent = new Intent(this, SensorActivity.class);
+        stopService(serviceIntent);
+
+    }
+
+
+
 
 
 

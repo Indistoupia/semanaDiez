@@ -40,6 +40,11 @@ public class ReadActivity extends AppCompatActivity {
 
 
 
+    public ReadActivity(){
+
+    }
+
+
 
 
     @Override
@@ -57,6 +62,14 @@ public class ReadActivity extends AppCompatActivity {
         btnPlay = findViewById(R.id.btnPlay);
 
         btnPlay.setVisibility(View.GONE);
+
+
+
+
+
+
+
+
 
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,7 +137,7 @@ public class ReadActivity extends AppCompatActivity {
                             new ReproducirAudioAsync().execute();
                         }
                     }
-                }, 1000);
+                }, 200);
 
             }
 
@@ -168,6 +181,28 @@ public class ReadActivity extends AppCompatActivity {
                 lst1.invalidateViews();
             }
 
+
+            lst1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+                    Persona persona = lista.get(position);
+                    Intent i = new Intent(getApplicationContext(), Editar.class);
+                    i.putExtra("id",persona.id);
+                    i.putExtra("nombre",persona.nombre);
+                    i.putExtra("apellido",persona.apellido);
+                    i.putExtra("edad",persona.edad);
+                    i.putExtra("contraseña",persona.pass);
+                    startActivity(i);
+
+
+
+
+                }
+            });
+
+
+
         }
 
 
@@ -181,6 +216,20 @@ public class ReadActivity extends AppCompatActivity {
 
 
     }
+
+
+    protected void onDestroy() {
+
+        super.onDestroy();
+
+
+
+
+    }
+
+
+
+
 
     private void iniciarReproduccion() {
         btnStop.setImageResource(R.drawable.stop);
