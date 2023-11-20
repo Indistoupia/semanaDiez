@@ -24,4 +24,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    public void IrRead(View view){
+        Intent i = new Intent(LoginActivity.this, ReadActivity.class);
+        startActivity(i);
+
+
+    }
+
+
 }

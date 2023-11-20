@@ -3,9 +3,11 @@ package com.joaquin.semanadiez;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.os.AsyncTask;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -18,11 +20,10 @@ import androidx.core.app.ActivityCompat;
 public class MainActivity extends AppCompatActivity {
 
 
-    ProgressBar progressBar;
-    private ProgressBar progressBar2;
 
-
-
+    MediaPlayer mp;
+    Button btnLogin;
+    Button btnMapa;
 
 
 
@@ -38,7 +39,30 @@ public class MainActivity extends AppCompatActivity {
         Intent serviceIntent = new Intent(this, SensorActivity.class);
         startService(serviceIntent);
 
+        btnMapa = (Button)findViewById(R.id.btnMapa);
+        btnLogin = (Button)findViewById(R.id.btnLogin);
+        mp = MediaPlayer.create(this, R.raw.btn1);
+        mp = MediaPlayer.create(this, R.raw.btn1);
+        btnLogin.setOnClickListener(new View.OnClickListener(){
 
+
+            @Override
+            public void onClick(View v) {
+                mp.start();
+                VerLogin();
+            }
+        });
+
+
+        btnMapa.setOnClickListener(new View.OnClickListener(){
+
+
+            @Override
+            public void onClick(View v) {
+                mp.start();
+                IrMapa();
+            }
+        });
 
 
 
@@ -47,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void IrMapa(View view){
+    public void IrMapa(){
 
         Intent i = new Intent(MainActivity.this, MapaActivity.class);
         startActivity(i);
@@ -56,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void VerLogin(View view){
+    public void VerLogin(){
         Intent i = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(i);
 
@@ -78,8 +102,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            progressBar.setMax(100);
-            progressBar.setProgress(0);
+
         }
 
         @Override
@@ -98,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
 
-            progressBar.setProgress(values[0].intValue());
+
         }
 
         @Override

@@ -40,7 +40,7 @@
             />
 
         <Button
-            android:id="@+id/btnSensor"
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="VerLogin"
