@@ -7,7 +7,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
+import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -27,7 +30,9 @@ public class ReadActivity extends AppCompatActivity {
     private ArrayList<String> arreglo = new ArrayList<String>();
     private ArrayAdapter arrayAdapter;
 
-    ImageButton btnStop, btnPause;
+    private boolean isPlaying = false;
+
+    ImageButton btnStop, btnPause, btnPlay;
 
 
 
@@ -49,16 +54,46 @@ public class ReadActivity extends AppCompatActivity {
 
         btnStop = findViewById(R.id.btnStop);
         btnPause = findViewById(R.id.btnPause);
+        btnPlay = findViewById(R.id.btnPlay);
 
+        btnPlay.setVisibility(View.GONE);
 
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                mp.stop();
+                //mp.stop();
+
+                //comprobarVisible();
+
+                if (isPlaying) {
+
+                    detenerReproduccion();
+                } else {
+
+                    iniciarReproduccion();
+                }
+
+
+
+
+
+
+                /*if (btnPlay.getVisibility() == View.GONE){
+
+
+                    btnPlay.setVisibility(View.VISIBLE);
+
+
+                }
+                btnStop.setVisibility(View.GONE);*/
+
 
             }
         });
+
+
+
 
 
         btnPause.setOnClickListener(new View.OnClickListener() {
@@ -69,6 +104,30 @@ public class ReadActivity extends AppCompatActivity {
 
 
             }
+        });
+
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                //comprobarVisible();
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                            new ReproducirAudioAsync().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                        } else {
+                            new ReproducirAudioAsync().execute();
+                        }
+                    }
+                }, 1000);
+
+            }
+
         });
 
 
@@ -121,12 +180,61 @@ public class ReadActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
     }
+
+    private void iniciarReproduccion() {
+        btnStop.setImageResource(R.drawable.stop);
+        isPlaying = true;
+        new ReproducirAudioAsync().execute();
+    }
+
+    private void detenerReproduccion() {
+        btnStop.setImageResource(R.drawable.play);
+        isPlaying = false;
+        mp.stop();
+        mp.reset();
+        mp = MediaPlayer.create(this, R.raw.indagetto_jbalvin);
+    }
+
+
+
+
+
+
+    /*public void comprobarVisible(){
+        if (btnStop.getVisibility() == View.VISIBLE){
+
+
+            btnPlay.setVisibility(View.VISIBLE);
+            btnStop.setVisibility(View.GONE);
+
+        }else {
+
+            btnPlay.setVisibility(View.GONE);
+
+            btnStop.setVisibility(View.VISIBLE);
+        }
+
+
+
+    }*/
+
+
+    private class ReproducirAudioAsync extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                mp.start();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+    }
+
+
 
 
 
