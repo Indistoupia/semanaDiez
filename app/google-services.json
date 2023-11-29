@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "120886661044",
+    "project_id": "semanadiezst",
+    "storage_bucket": "semanadiezst.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120886661044:android:85f7e2f02d43f06d8b6ce1",
+        "android_client_info": {
+          "package_name": "com.joaquin.semanadiez"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWjowITvU8oPTgIXhIsq79jXfv7DTBnyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

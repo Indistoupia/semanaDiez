@@ -16,9 +16,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.ActivityCompat;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+    private FirebaseAnalytics mFirebaseAnalytics;
 
 
     MediaPlayer mp;
@@ -38,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         Intent serviceIntent = new Intent(this, SensorActivity.class);
         startService(serviceIntent);
+
+
+
 
         btnMapa = (Button)findViewById(R.id.btnMapa);
         btnLogin = (Button)findViewById(R.id.btnLogin);
