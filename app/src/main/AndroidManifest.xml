@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="CoarseFineLocation"
-    >
+    tools:ignore="CoarseFineLocation">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -19,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mapbox"
         tools:targetApi="31">
+        <activity
+            android:name=".MQTTActivity"
+            android:exported="false" />
         <activity
             android:name=".FB_RegisterActivity"
             android:exported="false" />
@@ -42,9 +44,7 @@
         </activity>
         <activity
             android:name=".MapaActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".SensorActivity"
             android:exported="true" />

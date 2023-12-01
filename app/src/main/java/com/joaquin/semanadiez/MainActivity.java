@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private static final String mqttHost = "tcp://mqtt://mqtt-perrito-sonriente:8uAFhVex5I3hXUiO@mqtt-perrito-sonriente.cloud.shiftr.io:1883";
+    private static final String mqttUser = "your_client_id";
+    private static final String mqttPass = "your_client_id";
+    private MQTTActivity mqttHandler;
 
 
 
