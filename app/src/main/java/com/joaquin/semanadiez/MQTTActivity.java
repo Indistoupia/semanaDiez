@@ -3,6 +3,9 @@ package com.joaquin.semanadiez;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
+import android.widget.Button;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -15,6 +18,8 @@ public class MQTTActivity extends AppCompatActivity {
 
 
 
+
+
     private MqttClient client;
 
 
@@ -22,6 +27,10 @@ public class MQTTActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mqttactivity);
+
+
+
+
     }
 
 

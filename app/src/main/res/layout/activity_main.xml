@@ -53,11 +53,11 @@
 
 
         <Button
-            android:id="@+id/btnLoginFB"
+            android:id="@+id/btnIrFB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="VerLogin"
-            android:text="Firebase"
+
+            android:text="Firebase  🔥"
             android:backgroundTint="#FA8650"
 
             app:shapeAppearanceOverlay="@style/nonRoundCorners"

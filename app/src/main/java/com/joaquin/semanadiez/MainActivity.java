@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     MediaPlayer mp;
-    Button btnLogin;
+    Button btnLogin, btnIrFB;
     Button btnMapa;
 
 
 
     private static final String mqttHost = "tcp://mqtt://mqtt-perrito-sonriente:8uAFhVex5I3hXUiO@mqtt-perrito-sonriente.cloud.shiftr.io:1883";
-    private static final String mqttUser = "your_client_id";
-    private static final String mqttPass = "your_client_id";
+    private static final String mqttUser = "mqtt-perrito-sonriente";
+    private static final String mqttPass = "8uAFhVex5I3hXUiO";
     private MQTTActivity mqttHandler;
 
 
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnMapa = (Button)findViewById(R.id.btnMapa);
         btnLogin = (Button)findViewById(R.id.btnLogin);
+        btnIrFB = (Button)findViewById(R.id.btnIrFB);
         mp = MediaPlayer.create(this, R.raw.btn1);
         mp = MediaPlayer.create(this, R.raw.btn1);
         btnLogin.setOnClickListener(new View.OnClickListener(){
@@ -62,6 +63,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 mp.start();
                 VerLogin();
+            }
+        });
+
+        btnIrFB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IrFB();
             }
         });
 
@@ -98,6 +106,15 @@ public class MainActivity extends AppCompatActivity {
     public void IrMapa(){
 
         Intent i = new Intent(MainActivity.this, MapaActivity.class);
+        startActivity(i);
+
+
+    }
+
+
+    public void IrFB(){
+
+        Intent i = new Intent(MainActivity.this, FB_RegisterActivity.class);
         startActivity(i);
 
 
