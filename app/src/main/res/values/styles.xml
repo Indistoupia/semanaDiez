@@ -39,6 +39,17 @@
     </style>
 
 
+    <style name="almostRoundCorners" parent="">
+
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+
+
+
+    </style>
+
+
     <style name="nonRoundCorners" parent="">
 
 

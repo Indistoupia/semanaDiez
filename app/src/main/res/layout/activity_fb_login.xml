@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FB_RegisterActivity"
+    tools:context=".FB_LoginActivity"
 
     android:background="#5AAAF1"
 
@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Registro"
+        android:text="Ingresar"
         android:textStyle="bold"
         android:textSize="30dp"
         android:layout_centerHorizontal="true"
@@ -55,89 +55,8 @@
 
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-
-            >
 
 
-            <TextView
-                android:id="@+id/txtNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:textColor="#E8E8E8"
-                android:text="Nombre" />
-
-            <EditText
-                android:id="@+id/etNombreFB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text"
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-
-            >
-            <TextView
-                android:id="@+id/txtApellido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:textColor="#E8E8E8"
-
-                android:text="Apellido" />
-
-            <EditText
-                android:id="@+id/etApellidoFB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="text"
-                />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            >
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:textColor="#E8E8E8"
-                android:text="Edad" />
-
-            <EditText
-                android:id="@+id/etEdadFB"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:inputType="number"
-                />
-
-
-        </LinearLayout>
 
 
         <LinearLayout
@@ -160,6 +79,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+
                 android:ems="10"
                 android:inputType="textEmailAddress" />
 
@@ -241,16 +161,14 @@
 
 
             <Button
-                android:id="@+id/btnLoginFB"
+                android:id="@+id/btnRegisterFB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Iniciar Sesión"
-
-
+                android:text="Registrar"
                 android:backgroundTint="#0092C3E8"
-                android:textColor="#E8E8E8"
-                android:onClick="IrLogin"
+                android:textColor="#F3E8E8E8"
+
 
 
                 app:shapeAppearanceOverlay="@style/nonRoundCorners"
@@ -258,12 +176,12 @@
 
                 />
             <Button
-                android:id="@+id/btnRegisterFB"
+                android:id="@+id/btnLoginFB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Registrar"
-                android:backgroundTint="#E39B6B"
+                android:text="Ingresar"
+                android:backgroundTint="#3E41DF"
 
                 app:shapeAppearanceOverlay="@style/nonRoundCorners"
 
@@ -287,7 +205,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="¿Olvidaste tu Contraseña?"
-
+        android:textSize="13dp"
 
         android:textColor="#F4ECCE"
         android:background="#FD1B3349"
@@ -299,6 +217,7 @@
         android:layout_below="@+id/loginZone"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+
         />
 
 

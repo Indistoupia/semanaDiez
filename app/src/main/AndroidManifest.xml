@@ -7,7 +7,10 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.PROXIMITY_SCREEN_OFF_WAKE_LOCK" />
-    <meta-data android:name="com.mapbox.maps.location.gms.SKIP_IF_INVALID_VERSION" android:value="true"/>
+
+    <meta-data
+        android:name="com.mapbox.maps.location.gms.SKIP_IF_INVALID_VERSION"
+        android:value="true" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mapbox"
         tools:targetApi="31">
+        <activity
+            android:name=".FB_LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".MQTTActivity"
             android:exported="false" />
