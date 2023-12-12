@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.widget.Button;
+import android.widget.Toast;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -23,6 +24,9 @@ public class MQTTActivity extends AppCompatActivity {
     private MqttClient client;
 
 
+    private MqttCallback callback;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,15 @@ public class MQTTActivity extends AppCompatActivity {
 
     }
 
+    public interface MqttCallback {
+        void onSubscribeSuccess();
+        void onSubscribeFailure(String errorMessage);
+    }
+
+
+    public void setCallback(MqttCallback callback) {
+        this.callback = callback;
+    }
 
 
 
@@ -75,11 +88,30 @@ public class MQTTActivity extends AppCompatActivity {
     }
 
     public void subscribe(String topic) {
-        try {
-            client.subscribe(topic);
+
+        boolean success = true;
+
+        if (success && callback != null) {
+            callback.onSubscribeSuccess();
+        } else if (!success && callback != null) {
+            callback.onSubscribeFailure("Error al suscribirse");
+        }
+
+        /*try {
+
+
+
+            if (client != null || client.isConnected()) {
+                client.subscribe(topic, 0);
+            } else {
+                Toast.makeText(MainActivity.this, "No se ha podido suscribir con MQTT", Toast.LENGTH_SHORT);
+            }
+
+
         } catch (MqttException e) {
             e.printStackTrace();
-        }
+        }*/
+
     }
 
 

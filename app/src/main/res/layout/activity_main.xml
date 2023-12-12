@@ -1,69 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+
+    android:layout_gravity="center_horizontal"
+    >
 
 
-    <com.google.android.material.progressindicator.CircularProgressIndicator
+    <TextView
+        android:id="@+id/txtNombreDispositivo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-
-        android:id="@+id/circuloDeCarga"
-        />
-
-
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Nombre Dispositivo" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="1"
+
+
+
+
         >
 
-        <Button
-            android:id="@+id/btnMapa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="IrMapa"
-            android:text="Mapa"
-            android:backgroundTint="#75C5CC"
+        <LinearLayout
+            android:layout_width="400sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
 
 
-            app:shapeAppearanceOverlay="@style/midRoundCorners"
+            >
 
-            />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="VerLogin"
-            android:text="Ver login"
-            android:backgroundTint="#CC759B"
-
-            app:shapeAppearanceOverlay="@style/midRoundCorners"
-
-            />
+            <ImageButton
+                android:id="@+id/btnMapa"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:onClick="IrMapa"
 
 
-        <Button
-            android:id="@+id/btnIrFB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+                android:src="@drawable/map_icon"
+                android:layout_marginLeft="26dp"
 
-            android:text="Firebase  🔥"
-            android:backgroundTint="#FA8650"
+                android:backgroundTint="#75C5CC"
+                android:scaleType="centerInside"
+                android:cropToPadding="true"
+                android:padding="28dp"
 
-            app:shapeAppearanceOverlay="@style/nonRoundCorners"
 
-            />
+                app:shapeAppearanceOverlay="@style/roundCorners"
+                android:background="@drawable/rounded_button"
+
+                />
+
+
+            <TextView
+                android:id="@+id/tVMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:gravity="center"
+
+
+                android:text="Mapa" />
+
+            <ImageButton
+                android:id="@+id/btnIrFB"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="6sp"
+
+
+
+                android:backgroundTint="#FA8650"
+                android:cropToPadding="true"
+                android:padding="28dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/fire_icon"
+                android:text="Firebase"
+
+
+                app:shapeAppearanceOverlay="@style/roundCorners"
+                android:background="@drawable/rounded_button"
+
+                />
+
+            <TextView
+                android:id="@+id/tVFire"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:gravity="center"
+
+
+                android:text="Firebase" />
+
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="400sp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+
+
+
+            >
+
+
+            <ImageButton
+                android:id="@+id/btnLogin"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="26dp"
+
+
+                android:backgroundTint="#CC759B"
+                android:cropToPadding="true"
+                android:onClick="VerLogin"
+                android:padding="28dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/locked_icon"
+                android:text="Ver login"
+
+
+                app:shapeAppearanceOverlay="@style/roundCorners"
+                android:background="@drawable/rounded_button"
+
+
+                />
+            <TextView
+                android:id="@+id/tVLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+
+
+
+
+
+
+
+                android:text="Login" />
+
+
+
+
+
+            <ImageButton
+                android:id="@+id/btnMQTTA"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginTop="6sp"
+
+
+
+                android:backgroundTint="#A91FCD12"
+                android:cropToPadding="true"
+                android:padding="28dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/send_icon"
+
+
+                android:text="Firebase"
+
+
+                app:shapeAppearanceOverlay="@style/roundCorners"
+                android:background="@drawable/rounded_button"
+
+
+
+
+                />
+
+
+
+
+            <TextView
+                android:id="@+id/tVMqttActivation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                android:layout_gravity="center"
+                android:gravity="center"
+
+
+                android:text="MQTT Activation" />
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
 
     </LinearLayout>
 
-</RelativeLayout>
+
+
+
+</LinearLayout>

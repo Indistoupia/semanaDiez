@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.PROXIMITY_SCREEN_OFF_WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <meta-data
         android:name="com.mapbox.maps.location.gms.SKIP_IF_INVALID_VERSION"
