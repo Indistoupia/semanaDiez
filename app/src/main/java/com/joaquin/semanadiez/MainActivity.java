@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    MediaPlayer mp;
+    MediaPlayer mp,mp_bamboo;
     ImageButton btnLogin, btnIrFB;
     ImageButton btnMapa, mqttActivation;
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         //mqttHandler.subscribe("gatos");
 
-        conexionBroker();
+        //conexionBroker();
 
 
 
@@ -113,7 +113,9 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = (ImageButton)findViewById(R.id.btnLogin);
         btnIrFB = (ImageButton)findViewById(R.id.btnIrFB);
         mp = MediaPlayer.create(this, R.raw.btn1);
-        mp = MediaPlayer.create(this, R.raw.btn1);
+        //mp = MediaPlayer.create(this, R.raw.btn1);
+
+        mp_bamboo = MediaPlayer.create(this, R.raw.bamboo_hit);
 
 
 
@@ -225,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void showToast(String message) {
+    protected void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
@@ -248,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void IrMapa(){
 
+        reproducirBamboo();
         Intent i = new Intent(MainActivity.this, MapaActivity.class);
         startActivity(i);
 
@@ -348,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void conexionBroker(){
+    /*public void conexionBroker(){
         String clientId = nombre_dispositivo;
         MqttAndroidClient cliente = new MqttAndroidClient(this.getApplicationContext(), mqttHost, clientId);
 
@@ -380,8 +383,17 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        }*/
+        public void reproducirBamboo() {
+            mp_bamboo.start();
 
-    }
+
+
+        }
+
+
+
+
 
 
 
