@@ -14,16 +14,6 @@
         />
 
 
-    <com.google.android.material.search.SearchBar
-        android:layout_width="320dp"
-        android:layout_marginTop="30dp"
-        android:layout_height="wrap_content"
-
-        android:id="@+id/search_bar"
-
-
-        />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,8 +32,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="-6dp"
-        android:layout_below="@+id/search_bar"
+        android:layout_marginTop="28dp"
+
         android:src="@drawable/baseline_light_mode_24"
         android:onClick="cambiarModo"
         android:background="#E1FFDCF7"
